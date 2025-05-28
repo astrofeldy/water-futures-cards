@@ -55,7 +55,15 @@ else:
         for i, col in enumerate(cols):
             card_path = os.path.join(card_folder, st.session_state.drawn_cards[i])
             card_image = Image.open(card_path)
-            col.image(card_image, caption=st.session_state.drawn_cards[i], use_container_width=True)
+            st.image(card_image, use_container_width=True)
+
+# Custom card positions
+positions = ["Past", "Present", "Future"]
+label = positions[i]
+
+# Display label
+st.markdown(f"<div style='text-align: center; font-size: 20px; font-weight: bold; margin-top: 8px;'>{label}</div>", unsafe_allow_html=True)
+
 
         if st.button("🔁 Draw Again"):
             st.session_state.flipped = False
