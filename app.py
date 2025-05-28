@@ -2,6 +2,8 @@ import streamlit as st
 from PIL import Image
 import random
 import os
+import base64  # ✅ move these to the top
+from io import BytesIO
 
 st.set_page_config(page_title="Draw Three Cards", layout="centered")
 
@@ -37,30 +39,22 @@ else:
     cols = st.columns(3)
     positions = ["Past", "Present", "Future"]
 
+    def image_to_base64(img):  # ✅ define this once outside the loop
+        buffered = BytesIO()
+        img.save(buffered, format="PNG")
+        return base64.b64encode(buffered.getvalue()).decode()
+
     for i in range(3):
         with cols[i]:
             if st.session_state.flipped_cards[i]:
                 card_path = os.path.join(card_folder, st.session_state.drawn_cards[i])
                 card_image = Image.open(card_path)
                 st.image(card_image, use_container_width=True)
-
-            # Convert image to base64 to embed in HTML
-
             else:
-                import base64
-                    from io import BytesIO
-                    
-                    def image_to_base64(img):
-                        buffered = BytesIO()
-                        img.save(buffered, format="PNG")
-                        return base64.b64encode(buffered.getvalue()).decode()
-                    
-                    back_img_base64 = image_to_base64(back_image)
-                    img_html = f"<img src='data:image/png;base64,{back_img_base64}' style='width:100%; border: none;'>"
-
-if st.button(img_html, key=f"flip_card_{i}", use_container_width=True):
-    st.session_state.flipped_cards[i] = True
-
+                back_img_base64 = image_to_base64(back_image)
+                img_html = f"<img src='data:image/png;base64,{back_img_base64}' style='width:100%; border: none;'>"
+                if st.button(img_html, key=f"flip_card_{i}", use_container_width=True):
+                    st.session_state.flipped_cards[i] = True
 
             # Always show the label under the card
             label = positions[i]
@@ -69,4 +63,3 @@ if st.button(img_html, key=f"flip_card_{i}", use_container_width=True):
     if st.button("🔁 Draw Again"):
         st.session_state.drawn_cards = random.sample(card_files, 3)
         st.session_state.flipped_cards = [False, False, False]
-
