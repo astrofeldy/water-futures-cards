@@ -46,12 +46,4 @@ for i in range(3):
             st.image(card_image, use_container_width=True)
         else:
             st.image(back_image, use_container_width=True)
-            # Center-aligned button
-            if st.button(f"Reveal: {positions[i]}", key=f"reveal_{i}"):
-                st.session_state.flipped_cards[i] = True
-
-# Draw again button at the bottom
-st.markdown("---")
-if st.button("🔁 Draw Again"):
-    st.session_state.drawn_cards = random.sample(card_files, 3)
-    st.session_state.flipped_cards = [False, False, False]
+            # Use a form to wrap the button and center it
