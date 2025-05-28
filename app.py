@@ -17,7 +17,7 @@ st.markdown("""
 4. What story could you tell about the timeline you've revealed here? How do the past and present cards interact with the future?
 5. Share back with the group the story/scenario you come up with.
 #
-PS: Click **"Draw Again"** to shuffle and try a new set, if you want to.
+PS: Double click **"Draw Again"** to shuffle and try a new set, if you want to.
 
 ---
 """)
