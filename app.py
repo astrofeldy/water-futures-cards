@@ -49,10 +49,14 @@ for i in range(3):
             st.image(card_image, use_container_width=True)
         else:
             st.image(back_image, use_container_width=True)
-            with st.form(key=f"form_{i}"):
-                centered_button = st.form_submit_button(f"Reveal: {positions[i]}")
-                if centered_button:
-                    st.session_state.flipped_cards[i] = True
+            if st.button(f"Reveal: {positions[i]}", key=f"flip_button_{i}"):
+                st.session_state.flipped_cards[i] = True
+
+        # Show the label under each card (always)
+        st.markdown(
+            f"<div style='text-align: center; font-size: 18px; font-weight: bold; margin-top: 6px;'>{positions[i]}</div>",
+            unsafe_allow_html=True
+        )
 
 # Draw again button at the bottom
 st.markdown("---")
