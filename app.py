@@ -29,7 +29,7 @@ else:
         st.subheader("Click to flip your cards:")
         cols = st.columns(3)
         for col in cols:
-            col.image(back_image, use_column_width=True)
+            col.image(back_image, use_container_width=True)
 
         if st.button("🔮 Flip Cards"):
             st.session_state.flipped = True
