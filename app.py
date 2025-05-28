@@ -4,7 +4,7 @@ import random
 import os
 
 # Page setup
-st.set_page_config(page_title="Draw Three Cards", layout="centered")
+st.set_page_config(page_title="Water Futures Cards Activity", layout="centered")
 
 # Title & instructions
 st.title("🎴 Imagining your water future")
