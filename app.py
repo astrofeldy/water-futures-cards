@@ -11,11 +11,12 @@ st.title("🎴 Imagining your water future")
 st.markdown("""
 ### 📝 Instructions
 
-1. Click the "Reveal" button below each card to flip it over.
+1. **Double click** the "Reveal" button below each card to flip it over.
 2. Discuss together what each card means to you, as a standalone image/word. 
 3. As a group, discuss how this meaning could represent a water past, present, or future (depending on the card position).
 4. What story could you tell about the timeline you've revealed here? How do the past and present cards interact with the future?
 5. Share back with the group the story/scenario you come up with.
+##
 PS: Click **"Draw Again"** to shuffle and try a new set, if you want to.
 
 ---
