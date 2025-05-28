@@ -27,7 +27,7 @@ else:
     # If not flipped yet, show backs
     if not st.session_state.flipped:
         st.subheader("Click to flip your cards:")
-        cols = st.columns(3)
+        cols = st.containers(3)
         for col in cols:
             col.image(back_image, use_container_width=True)
 
@@ -37,11 +37,11 @@ else:
 
     else:
         st.subheader("Your Cards:")
-        cols = st.columns(3)
+        cols = st.containers(3)
         for i, col in enumerate(cols):
             card_path = os.path.join(card_folder, st.session_state.drawn_cards[i])
             card_image = Image.open(card_path)
-            col.image(card_image, caption=st.session_state.drawn_cards[i], use_column_width=True)
+            col.image(card_image, caption=st.session_state.drawn_cards[i], use_container_width=True)
 
         if st.button("🔁 Draw Again"):
             st.session_state.flipped = False
