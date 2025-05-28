@@ -27,8 +27,6 @@ card_files = [f for f in os.listdir(card_folder) if f.endswith(('.png', '.jpg', 
 if 'flipped_cards' not in st.session_state:
     st.session_state.drawn_cards = random.sample(card_files, 3)
     st.session_state.flipped_cards = [False, False, False]
-if 'drawn_cards' not in st.session_state:
-    st.session_state.drawn_cards = []
 
 # Require at least 3 cards
 if len(card_files) < 3:
