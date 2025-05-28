@@ -16,7 +16,7 @@ st.markdown("""
 3. As a group, discuss how this meaning could represent a water past, present, or future (depending on the card position).
 4. What story could you tell about the timeline you've revealed here? How do the past and present cards interact with the future?
 5. Share back with the group the story/scenario you come up with.
-##
+#
 PS: Click **"Draw Again"** to shuffle and try a new set, if you want to.
 
 ---
