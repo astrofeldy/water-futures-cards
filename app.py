@@ -44,9 +44,21 @@ else:
                 card_image = Image.open(card_path)
                 st.image(card_image, use_container_width=True)
             else:
-                if st.button(f"Flip Card {i+1}"):
-                    st.session_state.flipped_cards[i] = True
-                st.image(back_image, use_container_width=True)
+                # Convert image to base64 to embed in HTML
+import base64
+from io import BytesIO
+
+def image_to_base64(img):
+    buffered = BytesIO()
+    img.save(buffered, format="PNG")
+    return base64.b64encode(buffered.getvalue()).decode()
+
+back_img_base64 = image_to_base64(back_image)
+img_html = f"<img src='data:image/png;base64,{back_img_base64}' style='width:100%; border: none;'>"
+
+if st.button(img_html, key=f"flip_card_{i}", use_container_width=True):
+    st.session_state.flipped_cards[i] = True
+
 
             # Always show the label under the card
             label = positions[i]
