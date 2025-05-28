@@ -34,36 +34,27 @@ if 'drawn_cards' not in st.session_state:
 if len(card_files) < 3:
     st.error("Not enough cards in the deck (need at least 3).")
 else:
-    # If not flipped yet, show backs
-    if not st.session_state.flipped:
-        st.subheader("Click a card to reveal it 🔮")
-        cols = st.columns(3)
-        ffor i in range(3):
-    with cols[i]:
-        if st.session_state.flipped_cards[i]:
-            card_path = os.path.join(card_folder, st.session_state.drawn_cards[i])
-            card_image = Image.open(card_path)
-            st.image(card_image, use_container_width=True)
-        else:
-            if st.button(f"Flip Card {i+1}"):
-                st.session_state.flipped_cards[i] = True
-            st.image(back_image, use_container_width=True)
+    st.subheader("Click a card to reveal it 🔮")
 
-    else:
-        st.subheader("Your Cards:")
-        cols = st.columns(3)
-        for i, col in enumerate(cols):
-            card_path = os.path.join(card_folder, st.session_state.drawn_cards[i])
-            card_image = Image.open(card_path)
-            st.image(card_image, use_container_width=True)
+    cols = st.columns(3)
+    positions = ["Past", "Present", "Future"]
 
-# Custom card positions
-positions = ["Past", "Present", "Future"]
-label = positions[i]
+    for i in range(3):
+        with cols[i]:
+            if st.session_state.flipped_cards[i]:
+                card_path = os.path.join(card_folder, st.session_state.drawn_cards[i])
+                card_image = Image.open(card_path)
+                st.image(card_image, use_container_width=True)
+            else:
+                if st.button(f"Flip Card {i+1}"):
+                    st.session_state.flipped_cards[i] = True
+                st.image(back_image, use_container_width=True)
 
-# Display label
-st.markdown(f"<div style='text-align: center; font-size: 20px; font-weight: bold; margin-top: 8px;'>{label}</div>", unsafe_allow_html=True)
+            # Always show the label under the card
+            label = positions[i]
+            st.markdown(f"<div style='text-align: center; font-size: 20px; font-weight: bold; margin-top: 8px;'>{label}</div>", unsafe_allow_html=True)
 
+    if st.button("🔁 Draw Again"):
+        st.session_state.drawn_cards = random.sample(card_files, 3)
+        st.session_state.flipped_cards = [False, False, False]
 
-        if st.button("🔁 Draw Again"):
-            st.session_state.flipped = False
