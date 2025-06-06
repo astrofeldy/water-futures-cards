@@ -104,7 +104,7 @@ with cols[1]:
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Next)</div>", unsafe_allow_html=True)
     #if st.button("🔥 Reveal DYSTOPIAN card", key="reveal_dystopia"):
     if st.button("🔥 Reveal DYSTOPIAN card"):
-        print ("hi")
+        st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (boom)</div>", unsafe_allow_html=True)
 
 # -------------------- RESET BUTTON --------------------
 if st.button("🔁 Reset the Deck"):
