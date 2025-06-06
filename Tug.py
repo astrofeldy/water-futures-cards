@@ -92,7 +92,6 @@ with cols[3]:
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Next)</div>", unsafe_allow_html=True)
     if st.button("🔥 Reveal DYSTOPIAN card"):
         draw_card("dystopia")
-        st.write(st.session_state.unused_cards)
 
 #----troubleshoot   
 info = st.columns(4)
