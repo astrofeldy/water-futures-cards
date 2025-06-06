@@ -65,7 +65,7 @@ cols = st.columns(4)
 with cols[0]:
     st.image(back_image, use_container_width=True)
     st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Next)</div>", unsafe_allow_html=True)
-   if st.button("🌿 Reveal UTOPIAN card", key="reveal_utopia"):
+    if st.button("🌿 Reveal UTOPIAN card", key="reveal_utopia"):
         draw_card("utopia")
 
 # ----- COL 1: UTOPIA CARD DISPLAY -----
@@ -90,7 +90,7 @@ with cols[2]:
 with cols[3]:
     st.image(back_image, use_container_width=True)
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Next)</div>", unsafe_allow_html=True)
-     if st.button("🔥 Reveal DYSTOPIAN card"):
+    if st.button("🔥 Reveal DYSTOPIAN card"):
         draw_card("dystopia")
         st.write(st.session_state.unused_cards)
    
