@@ -93,12 +93,12 @@ with cols[2]:
         new_card = st.session_state.unused_cards.pop()
         st.session_state.used_cards.append(new_card)
         st.session_state.dystopia_card = new_card 
-    if st.session_state.dystopia_card:
-        card_path = os.path.join(card_folder, st.session_state.dystopia_card)
-        st.image(Image.open(card_path), use_container_width=True)
-    else:
-        st.empty()
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Revealed)</div>", unsafe_allow_html=True)
+        if st.session_state.dystopia_card:
+            card_path = os.path.join(card_folder, st.session_state.dystopia_card)
+            st.image(Image.open(card_path), use_container_width=True)
+        else:
+            st.empty()
+        st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Revealed)</div>", unsafe_allow_html=True)
 
 # ----- COL 3: DYSTOPIA DRAW BUTTON -----
 #with cols[]:
