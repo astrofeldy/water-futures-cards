@@ -43,10 +43,10 @@ def draw_card(for_side):
     Draw one card randomly from unused_cards and assign it to the requested side.
     Side must be "utopia" or "dystopia".
     """
-    #if not st.session_state.unused_cards:
+    if not st.session_state.unused_cards:
         # If all cards have been used, reshuffle the deck
-        #st.session_state.unused_cards = random.sample(st.session_state.used_cards, len(st.session_state.used_cards))
-        #st.session_state.used_cards = []
+        st.session_state.unused_cards = random.sample(st.session_state.used_cards, len(st.session_state.used_cards))
+        st.session_state.used_cards = []
 
     # Draw one new card
     new_card = st.session_state.unused_cards.pop()
