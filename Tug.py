@@ -36,20 +36,28 @@ if len(card_files) < 4:
 
 # -------------------- SESSION STATE --------------------
 # Setup session state for independent draws
-if "shuffled_deck" not in st.session_state:
-    shuffled = random.sample(card_files, len(card_files))
-    st.session_state.shuffled_deck = shuffled
-    st.session_state.utopia_index = 0
-    st.session_state.dystopia_index = 0
+if "available_cards" not in st.session_state:
+    st.session_state.available_cards = random.sample(card_files, len(card_files))
+    st.session_state.utopia_used = []
+    st.session_state.dystopia_used = []
+
 
 # -------------------- DRAW FUNCTIONS --------------------
-def draw_utopia():
-    if st.session_state.utopia_index + st.session_state.dystopia_index < len(st.session_state.shuffled_deck):
-        st.session_state.utopia_index += 1
+def draw_card(target):
+    if not st.session_state.available_cards:
+        # Reshuffle if deck is exhausted
+        all_used = st.session_state.utopia_used + st.session_state.dystopia_used
+        st.session_state.available_cards = random.sample(all_used, len(all_used))
+        st.session_state.utopia_used = []
+        st.session_state.dystopia_used = []
 
-def draw_dystopia():
-    if st.session_state.utopia_index + st.session_state.dystopia_index < len(st.session_state.shuffled_deck):
-        st.session_state.dystopia_index += 1
+    card = st.session_state.available_cards.pop()
+    
+    if target == "utopia":
+        st.session_state.utopia_used.append(card)
+    elif target == "dystopia":
+        st.session_state.dystopia_used.append(card)
+
 
 # -------------------- CARD DISPLAY --------------------
 # Layout: Back → Face → Face → Back
@@ -60,23 +68,22 @@ with cols[0]:
     st.image(back_image, use_container_width=True)
     st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Next)</div>", unsafe_allow_html=True)
     if st.button("🌿 Reveal UTOPIAN card", key="reveal_utopia"):
-        draw_utopia()
+        draw_card("utopia")
 
 # UTOPIA: revealed card (most recent only)
 with cols[1]:
-    if st.session_state.utopia_index > 0:
-        card_path = os.path.join(card_folder, st.session_state.shuffled_deck[st.session_state.utopia_index - 1])
-        st.image(Image.open(card_path), use_container_width=True)
+    if st.session_state.utopia_used:
+        last_utopia = st.session_state.utopia_used[-1]
+        st.image(Image.open(os.path.join(card_folder, last_utopia)), use_container_width=True)
     else:
         st.empty()
     st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Revealed)</div>", unsafe_allow_html=True)
 
 # DYSTOPIA: revealed card (most recent only)
 with cols[2]:
-    if st.session_state.dystopia_index > 0:
-        offset = st.session_state.utopia_index + st.session_state.dystopia_index - 1
-        card_path = os.path.join(card_folder, st.session_state.shuffled_deck[offset])
-        st.image(Image.open(card_path), use_container_width=True)
+    if st.session_state.dystopia_used:
+        last_dystopia = st.session_state.dystopia_used[-1]
+        st.image(Image.open(os.path.join(card_folder, last_dystopia)), use_container_width=True)
     else:
         st.empty()
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Revealed)</div>", unsafe_allow_html=True)
@@ -86,11 +93,13 @@ with cols[3]:
     st.image(back_image, use_container_width=True)
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Next)</div>", unsafe_allow_html=True)
     if st.button("🔥 Reveal DYSTOPIAN card", key="reveal_dystopia"):
-        draw_dystopia()
+        draw_card("dystopia")
 
 # -------------------- RESET --------------------
 if st.button("🔁 Reset the Deck"):
-    shuffled = random.sample(card_files, len(card_files))
+    st.session_state.available_cards = random.sample(card_files, len(card_files))
+    st.session_state.utopia_used = []
+    st.session_state.dystopia_used = []
     st.session_state.shuffled_deck = shuffled
     st.session_state.utopia_index = 0
     st.session_state.dystopia_index = 0
