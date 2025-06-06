@@ -22,83 +22,83 @@ This warm-up invites you to explore imagined futures:
 """)
 
 # -------------------- IMAGE SETUP --------------------
-# Load the back-of-card image
 back_image = Image.open("back.jpg")
 
-# Get list of available card images
 card_folder = "cards"
 card_files = [f for f in os.listdir(card_folder) if f.endswith((".jpg", ".jpeg", ".png"))]
 
-# Check for enough cards to draw from
 if len(card_files) < 4:
     st.error("Not enough cards in the deck (need at least 4).")
     st.stop()
 
-# -------------------- SESSION STATE --------------------
-# Setup session state for independent draws
-if "shuffled_deck" not in st.session_state:
-    st.session_state.shuffled_deck = random.sample(card_files, len(card_files))
-    st.session_state.utopia_index = 0
-    st.session_state.dystopia_index = 0
+# -------------------- SESSION STATE SETUP --------------------
+# Initialize deck, used cards set, and current revealed cards if not already in session state
+if "deck" not in st.session_state:
+    st.session_state.deck = card_files.copy()
+    random.shuffle(st.session_state.deck)
+    st.session_state.used_cards = set()
+    st.session_state.utopia_current = None
+    st.session_state.dystopia_current = None
 
-# -------------------- DRAW FUNCTIONS --------------------
-def draw_utopia():
-    # Make sure total draws don't exceed deck size
-    if st.session_state.utopia_index + st.session_state.dystopia_index < len(st.session_state.shuffled_deck):
-        st.session_state.utopia_index += 1
-    else:
-        # Reshuffle deck and reset indices to continue without repeats
-        st.session_state.shuffled_deck = random.sample(card_files, len(card_files))
-        st.session_state.utopia_index = 1
-        st.session_state.dystopia_index = 0
+# -------------------- DRAW FUNCTION --------------------
+def draw_card(side):
+    # Calculate which cards have not been used yet
+    unused_cards = list(set(st.session_state.deck) - st.session_state.used_cards)
 
-def draw_dystopia():
-    if st.session_state.utopia_index + st.session_state.dystopia_index < len(st.session_state.shuffled_deck):
-        st.session_state.dystopia_index += 1
-    else:
-        st.session_state.shuffled_deck = random.sample(card_files, len(card_files))
-        st.session_state.utopia_index = 0
-        st.session_state.dystopia_index = 1
+    # If all cards have been used, reset used_cards and reshuffle deck
+    if not unused_cards:
+        st.session_state.used_cards.clear()
+        random.shuffle(st.session_state.deck)
+        unused_cards = st.session_state.deck.copy()
 
-# -------------------- CARD DISPLAY --------------------
-# Layout: Back → Face → Face → Back
+    # Pick a random card from unused cards
+    card = random.choice(unused_cards)
+
+    # Mark the card as used
+    st.session_state.used_cards.add(card)
+
+    # Update the current revealed card for the respective side
+    if side == "utopia":
+        st.session_state.utopia_current = card
+    elif side == "dystopia":
+        st.session_state.dystopia_current = card
+
+# -------------------- PAGE LAYOUT --------------------
 cols = st.columns(4)
 
-# UTOPIA: back of next card
+# --- UTOPIA SIDE ---
 with cols[0]:
     st.image(back_image, use_container_width=True)
     st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Next)</div>", unsafe_allow_html=True)
     if st.button("🌿 Reveal UTOPIAN card", key="reveal_utopia"):
-        draw_utopia()
+        draw_card("utopia")
 
-# UTOPIA: revealed card (most recent only)
 with cols[1]:
-    if st.session_state.utopia_index > 0:
-        card_path = os.path.join(card_folder, st.session_state.shuffled_deck[st.session_state.utopia_index - 1])
+    if st.session_state.utopia_current:
+        card_path = os.path.join(card_folder, st.session_state.utopia_current)
         st.image(Image.open(card_path), use_container_width=True)
     else:
         st.empty()
     st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Revealed)</div>", unsafe_allow_html=True)
 
-# DYSTOPIA: revealed card (most recent only)
+# --- DYSTOPIA SIDE ---
 with cols[2]:
-    if st.session_state.dystopia_index > 0:
-        offset = st.session_state.utopia_index + st.session_state.dystopia_index - 1
-        card_path = os.path.join(card_folder, st.session_state.shuffled_deck[offset])
+    if st.session_state.dystopia_current:
+        card_path = os.path.join(card_folder, st.session_state.dystopia_current)
         st.image(Image.open(card_path), use_container_width=True)
     else:
         st.empty()
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Revealed)</div>", unsafe_allow_html=True)
 
-# DYSTOPIA: back of next card
 with cols[3]:
     st.image(back_image, use_container_width=True)
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Next)</div>", unsafe_allow_html=True)
     if st.button("🔥 Reveal DYSTOPIAN card", key="reveal_dystopia"):
-        draw_dystopia()
+        draw_card("dystopia")
 
 # -------------------- RESET --------------------
 if st.button("🔁 Reset the Deck"):
-    st.session_state.shuffled_deck = random.sample(card_files, len(card_files))
-    st.session_state.utopia_index = 0
-    st.session_state.dystopia_index = 0
+    st.session_state.used_cards.clear()
+    random.shuffle(st.session_state.deck)
+    st.session_state.utopia_current = None
+    st.session_state.dystopia_current = None
