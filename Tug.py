@@ -36,6 +36,7 @@ if "unused_cards" not in st.session_state:
     st.session_state.used_cards = []  # store all previously drawn cards
     st.session_state.utopia_card = None  # track current utopia image
     st.session_state.dystopia_card = None  # track current dystopia image
+    
 
 # -------------------- FUNCTION TO DRAW A CARD --------------------
 def draw_card(for_side):
@@ -57,6 +58,8 @@ def draw_card(for_side):
         st.session_state.utopia_card = new_card
     elif for_side == "dystopia":
         st.session_state.dystopia_card = new_card
+
+    #insert: if utopia = dystopia state, draw again
 
 # -------------------- UI LAYOUT --------------------
 cols = st.columns(4)
