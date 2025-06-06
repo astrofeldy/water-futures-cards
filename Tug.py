@@ -79,12 +79,12 @@ with cols[1]:
         st.session_state.used_cards.append(new_card)
         st.session_state.utopia_card = new_card
     #    draw_card("utopia")
-    if st.session_state.utopia_card:
-        card_path = os.path.join(card_folder, st.session_state.utopia_card)
-        st.image(Image.open(card_path), use_container_width=True)
-    else:
-        st.empty()
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Revealed)</div>", unsafe_allow_html=True)
+        if st.session_state.utopia_card:
+            card_path = os.path.join(card_folder, st.session_state.utopia_card)
+            st.image(Image.open(card_path), use_container_width=True)
+        else:
+            st.empty()
+        st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Revealed)</div>", unsafe_allow_html=True)
 
 # ----- COL 2: DYSTOPIA CARD DISPLAY -----
 with cols[2]:
