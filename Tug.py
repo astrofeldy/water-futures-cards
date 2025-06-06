@@ -93,41 +93,27 @@ with cols[3]:
     if st.button("🔥 Reveal DYSTOPIAN card"):
         draw_card("dystopia")
         st.write(st.session_state.unused_cards)
-   
-cols = st.columns(4)
 
-# ----- COL 0: UTOPIA DRAW BUTTON -----
-with cols[0]:
-    st.image(back_image, use_container_width=True)
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Next)</div>", unsafe_allow_html=True)
-    if st.button("🌿 Reveal UTOPIAN card", key="reveal_utopia"):
-        draw_card("utopia")
+#----troubleshoot   
+info = st.columns(4)
 
-# ----- COL 1: UTOPIA CARD DISPLAY -----
-with cols[1]:
-    if st.session_state.utopia_card:
-        card_path = os.path.join(card_folder, st.session_state.utopia_card)
-        st.image(Image.open(card_path), use_container_width=True)
-    else:
-        st.empty()
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Revealed)</div>", unsafe_allow_html=True)
+with info[0]:
+    st.markdown("<div style='text-align: center; font-weight: bold;'>Unused</div>", unsafe_allow_html=True)
+    st.write(st.session_state.unused_cards)
 
-# ----- COL 2: DYSTOPIA CARD DISPLAY -----
-with cols[2]:
-    if st.session_state.dystopia_card:
-        card_path = os.path.join(card_folder, st.session_state.dystopia_card)
-        st.image(Image.open(card_path), use_container_width=True)
-    else:
-        st.empty()
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Revealed)</div>", unsafe_allow_html=True)
+with info[1]:
+    st.markdown("<div style='text-align: center; font-weight: bold;'>Used</div>", unsafe_allow_html=True)
+    st.write(st.session_state.used_cards)
 
-# ----- COL 3: DYSTOPIA DRAW BUTTON -----
-with cols[3]:
-    st.image(back_image, use_container_width=True)
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Next)</div>", unsafe_allow_html=True)
-    if st.button("🔥 Reveal DYSTOPIAN card"):
-        draw_card("dystopia")
-        st.write(st.session_state.unused_cards)
+with info[2]:
+    st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia</div>", unsafe_allow_html=True)
+    st.write(st.session_state.utopia_card)
+
+with info[3]:
+    st.markdown("<div style='text-align: center; font-weight: bold;'>Distopia</div>", unsafe_allow_html=True)
+    st.write(st.session_state.dystopia_card)
+
+
 # -------------------- RESET BUTTON --------------------
 if st.button("🔁 Reset the Deck"):
     st.session_state.unused_cards = random.sample(card_files, len(card_files))
