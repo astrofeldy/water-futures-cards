@@ -93,4 +93,12 @@ with cols[2]:
 # DYSTOPIA: back of next card
 with cols[3]:
     st.image(back_image, use_container_width=True)
-    st.markdown(
+    st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Next)</div>", unsafe_allow_html=True)
+    if st.button("🔥 Reveal DYSTOPIAN card", key="reveal_dystopia"):
+        draw_dystopia()
+
+# -------------------- RESET --------------------
+if st.button("🔁 Reset the Deck"):
+    st.session_state.shuffled_deck = random.sample(card_files, len(card_files))
+    st.session_state.utopia_index = 0
+    st.session_state.dystopia_index = 0
