@@ -91,7 +91,7 @@ with cols[3]:
     st.image(back_image, use_container_width=True)
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Next)</div>", unsafe_allow_html=True)
     #if st.button("🔥 Reveal DYSTOPIAN card", key="reveal_dystopia"):
-    if st.button("🔥 Reveal DYSTOPIAN card", key=d):
+    if st.button("🔥 Reveal DYSTOPIAN card", key="d"):
         draw_card("dystopia")
 
 # -------------------- RESET BUTTON --------------------
