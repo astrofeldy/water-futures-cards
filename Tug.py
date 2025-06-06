@@ -92,12 +92,19 @@ with cols[0]:
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Revealed)</div>", unsafe_allow_html=True)
 
 # ----- COL 3: DYSTOPIA DRAW BUTTON -----
+#with cols[3]:
+ #   st.image(back_image, use_container_width=True)
+  #  st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Next)</div>", unsafe_allow_html=True)
+   # #if st.button("🔥 Reveal DYSTOPIAN card", key="reveal_dystopia"):
+    #if st.button("🔥 Reveal DYSTOPIAN card"):
+     #   draw_card("dystopia")
+
 with cols[1]:
     st.image(back_image, use_container_width=True)
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Next)</div>", unsafe_allow_html=True)
     #if st.button("🔥 Reveal DYSTOPIAN card", key="reveal_dystopia"):
     if st.button("🔥 Reveal DYSTOPIAN card"):
-        draw_card("dystopia")
+        print "hi"
 
 # -------------------- RESET BUTTON --------------------
 if st.button("🔁 Reset the Deck"):
