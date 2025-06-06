@@ -63,26 +63,27 @@ def draw_card(for_side):
         st.session_state.utopia_card = new_card
 
 # -------------------- UI LAYOUT --------------------
-cols = st.columns(4)
+#cols = st.columns(4)
+cols = st.columns(2)
 
 # ----- COL 0: UTOPIA DRAW BUTTON -----
-with cols[0]:
-    st.image(back_image, use_container_width=True)
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Next)</div>", unsafe_allow_html=True)
-    if st.button("🌿 Reveal UTOPIAN card", key="reveal_utopia"):
-        draw_card("utopia")
+#with cols[0]:
+ #   st.image(back_image, use_container_width=True)
+  #  st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Next)</div>", unsafe_allow_html=True)
+   # if st.button("🌿 Reveal UTOPIAN card", key="reveal_utopia"):
+    #    draw_card("utopia")
 
 # ----- COL 1: UTOPIA CARD DISPLAY -----
-with cols[1]:
-    if st.session_state.utopia_card:
-        card_path = os.path.join(card_folder, st.session_state.utopia_card)
-        st.image(Image.open(card_path), use_container_width=True)
-    else:
-        st.empty()
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Revealed)</div>", unsafe_allow_html=True)
+#with cols[1]:
+ #   if st.session_state.utopia_card:
+  #      card_path = os.path.join(card_folder, st.session_state.utopia_card)
+   #     st.image(Image.open(card_path), use_container_width=True)
+    #else:
+     #   st.empty()
+    #st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Revealed)</div>", unsafe_allow_html=True)
 
 # ----- COL 2: DYSTOPIA CARD DISPLAY -----
-with cols[2]:
+with cols[0]:
     if st.session_state.dystopia_card:
         card_path = os.path.join(card_folder, st.session_state.dystopia_card)
         st.image(Image.open(card_path), use_container_width=True)
@@ -91,7 +92,7 @@ with cols[2]:
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Revealed)</div>", unsafe_allow_html=True)
 
 # ----- COL 3: DYSTOPIA DRAW BUTTON -----
-with cols[3]:
+with cols[1]:
     st.image(back_image, use_container_width=True)
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Next)</div>", unsafe_allow_html=True)
     #if st.button("🔥 Reveal DYSTOPIAN card", key="reveal_dystopia"):
