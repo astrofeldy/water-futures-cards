@@ -61,6 +61,9 @@ for i in range(3):
             unsafe_allow_html=True
         )
 
+# Add a text box
+user_message = st.text_area("What's the story?", height=200)
+
 # Draw again button at the bottom
 st.markdown("---")
 if st.button("🔁 Draw Again"):
