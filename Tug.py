@@ -15,7 +15,7 @@ This warm-up invites you to explore imagined futures:
 1. Click **"Reveal Utopia"** to flip one hopeful card.
 2. Click **"Reveal Dystopia"** to flip one challenging or cautionary card.
 3. Reflect: What tensions emerge between them? How might both influence the future of water?
-4. Click **"Reset the Deck"** to start over with fresh cards.
+4. Double click **"Reset the Deck"** to start over with fresh cards.
 
 ---
 """)
