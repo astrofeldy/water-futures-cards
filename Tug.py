@@ -70,7 +70,7 @@ with cols[0]:
 
 # ----- COL 1: UTOPIA CARD DISPLAY -----
 with cols[1]:
-     if st.session_state.utopia_card:
+    if st.session_state.utopia_card:
         card_path = os.path.join(card_folder, st.session_state.utopia_card)
         st.image(Image.open(card_path), use_container_width=True)
     else:
