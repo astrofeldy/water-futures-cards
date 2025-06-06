@@ -71,6 +71,9 @@ with cols[0]:
     st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Next)</div>", unsafe_allow_html=True)
     if st.button("🌿 Reveal UTOPIAN card", key="reveal_utopia"):
         st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (wow)</div>", unsafe_allow_html=True)
+        new_card = st.session_state.unused_cards.pop()
+        st.session_state.used_cards.append(new_card)
+        st.session_state.utopia_card = new_card
     #    draw_card("utopia")
 
 # ----- COL 1: UTOPIA CARD DISPLAY -----
@@ -105,6 +108,9 @@ with cols[3]:
     #if st.button("🔥 Reveal DYSTOPIAN card", key="reveal_dystopia"):
     if st.button("🔥 Reveal DYSTOPIAN card"):
         st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (boom)</div>", unsafe_allow_html=True)
+        new_card = st.session_state.unused_cards.pop()
+        st.session_state.used_cards.append(new_card)
+        st.session_state.dystopia_card = new_card 
 
 # -------------------- RESET BUTTON --------------------
 if st.button("🔁 Reset the Deck"):
