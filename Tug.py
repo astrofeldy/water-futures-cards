@@ -53,12 +53,14 @@ def draw_card(for_side):
     st.session_state.used_cards.append(new_card)
 
     # Assign the drawn card to the correct side
-    if for_side == "utopia":
-        st.session_state.utopia_card = new_card
+    #if for_side == "utopia":
+    #    st.session_state.utopia_card = new_card
     #elif for_side == "dystopia":
     #    st.session_state.dystopia_card = new_card
+    if for_side == "dystopia":
+        st.session_state.dystopia_card = new_card        
     else:
-        st.session_state.dystopia_card = new_card
+        st.session_state.utopia_card = new_card
 
 # -------------------- UI LAYOUT --------------------
 cols = st.columns(4)
