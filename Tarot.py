@@ -18,9 +18,11 @@ st.markdown("""
 5. Share back with the group the story/scenario you come up with.
 
 PS: Double click **"Draw Again"** to shuffle and try a new set, if you want to.
-
+    
 ---
-""")
+"""
+           unsafe_allow_html=True)
+    
 
 # Load images
 back_image = Image.open("back.jpg")
