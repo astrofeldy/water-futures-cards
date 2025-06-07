@@ -75,11 +75,14 @@ for i in range(3):
             unsafe_allow_html=True
         )
 
+st.markdown("---")
+
 # Add a text box
 user_message = st.text_area("Use this text box to take notes, if you want to:", height=150)
 
-# Draw again button at the bottom
 st.markdown("---")
+
+# Draw again button at the bottom
 if st.button("🔁 Draw Again"):
     st.session_state.drawn_cards = random.sample(card_files, 3)
     st.session_state.flipped_cards = [False, False, False]
