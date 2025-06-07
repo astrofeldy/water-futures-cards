@@ -4,7 +4,7 @@ import random
 import os
 
 # -------------------- PAGE SETUP --------------------
-st.set_page_config(page_title="Tug of Futures", layout="centered")
+st.set_page_config(page_title="Tug of Futures warmup", layout="centered")
 st.title("🌏 Tug of Futures: Utopia vs. Dystopia")
 
 st.markdown("""
