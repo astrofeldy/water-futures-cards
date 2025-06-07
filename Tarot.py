@@ -45,7 +45,7 @@ cols = st.columns(3)
 # Display cards + reveal buttons
 for i in range(3):
     with cols[i]:
-        if st.button(f"Reveal: {positions[i]}", key=f"flip_button_{i}"):
+        if st.button(f"Draw card: {positions[i]}", key=f"flip_button_{i}"):
                 st.session_state.flipped_cards[i] = True
         if st.session_state.flipped_cards[i]:
                 card_path = os.path.join(card_folder, st.session_state.drawn_cards[i])
