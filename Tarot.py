@@ -16,9 +16,17 @@ st.markdown(
 
     1. Click the **"Draw card"** button above a card to flip it over, and discuss together what the card means to you as a standalone image/word/idea.  
     2. As a group, discuss how this meaning could represent a water justice past, present, or future (depending on the card position).  
-    3. **Imagine the year 2075.** What story could you tell about the timeline you've revealed here? How do the past and present cards interact with the future, 50 years from now?  
+    3. **Imagine the year 2075.** What story could you tell about the timeline you've revealed here? How do the past and present cards interact with the future, 50 years from now?  What does this future look like?
     4. Capture your story in our class <a href="https://www.google.com" target="_blank">Miro board</a>. Feel free to copy/paste any kind of other visual material that helps to tell your story.  
     5. Share back with the group the story/scenario you come up with.  
+
+    ##**Tips**
+    <ul>
+        <li>Stories of the future come to life when there are <i>people</i> involved. Who is in your future? What does their life look like?</li>
+        <li>If jumping straight to 50 years feels tricky, try to imagine 10 or 20 years in the future, first. Then jump another 10 years from there, and so on.</li>
+        <li>When you're unsure about a card, it's meaning, or how it comes to life, lean into this curiosity. Chat more about the possibilities of interpretation, and go back over it a few times if you need to.</li>
+        <li>What pictures, songs, poems, or other media bring this future to life? Include these in your story, too.</li>
+    </ul>
 
     PS: Double click **"Draw Again"** to shuffle and try a new set, if you want to.  
 
