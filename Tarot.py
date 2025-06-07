@@ -25,7 +25,7 @@ PS: Double click **"Draw Again"** to shuffle and try a new set, if you want to.
 
 # Load images
 back_image = Image.open("back.jpg")
-card_folder = "cards"
+card_folder = "cardsreal"
 card_files = [f for f in os.listdir(card_folder) if f.endswith(('.png', '.jpg', '.jpeg'))]
 
 # Check if enough cards exist
