@@ -97,23 +97,23 @@ with cols[2]:
     st.markdown("<div style='text-align: center; font-weight: bold;'>Dystopia (Revealed)</div>", unsafe_allow_html=True)
 
 #----troubleshoot   
-info = st.columns(4)
+#info = st.columns(4)
 
-with info[0]:
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Unused</div>", unsafe_allow_html=True)
-    st.write(st.session_state.unused_cards)
+#with info[0]:
+    #st.markdown("<div style='text-align: center; font-weight: bold;'>Unused</div>", unsafe_allow_html=True)
+    #st.write(st.session_state.unused_cards)
 
-with info[1]:
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Used</div>", unsafe_allow_html=True)
-    st.write(st.session_state.used_cards)
+#with info[1]:
+ #   st.markdown("<div style='text-align: center; font-weight: bold;'>Used</div>", unsafe_allow_html=True)
+  #  st.write(st.session_state.used_cards)
 
-with info[2]:
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia</div>", unsafe_allow_html=True)
-    st.write(st.session_state.utopia_card)
+#with info[2]:
+ #   st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia</div>", unsafe_allow_html=True)
+  #  st.write(st.session_state.utopia_card)
 
-with info[3]:
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Distopia</div>", unsafe_allow_html=True)
-    st.write(st.session_state.dystopia_card)
+#with info[3]:
+ #   st.markdown("<div style='text-align: center; font-weight: bold;'>Distopia</div>", unsafe_allow_html=True)
+  #  st.write(st.session_state.dystopia_card)
 
 
 # -------------------- RESET BUTTON --------------------
