@@ -20,7 +20,7 @@ st.markdown(
     4. Capture your story in our class <a href="https://www.google.com" target="_blank">Miro board</a>. Feel free to copy/paste any kind of other visual material that helps to tell your story.  
     5. Share back with the group the story/scenario you come up with.  
 
-    ##**Tips**
+    ###**Tips**
     <ul>
         <li>Stories of the future come to life when there are <i>people</i> involved. Who is in your future? What does their life look like?</li>
         <li>If jumping straight to 50 years feels tricky, try to imagine 10 or 20 years in the future, first. Then jump another 10 years from there, and so on.</li>
