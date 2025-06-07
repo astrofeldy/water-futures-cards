@@ -23,8 +23,8 @@ st.markdown(
     #### **Tips!**
     <ul>
         <li>Stories of the future come to life when there are <i>people</i> involved. Who is in your future? What does their life look like?</li>
-        <li>If jumping straight to 50 years feels tricky, try to imagine 10 or 20 years in the future, first. Then jump another 10 years from there, and so on.</li>
-        <li>When you're unsure about a card, it's meaning, or how it comes to life, lean into this curiosity. Chat more about the possibilities of interpretation, and go back over it a few times if you need to.</li>
+        <li>If jumping straight to 50 years feels tricky, try to imagine 10 or 20 years in the future, <i>first</i>. Then jump another 10 years from there, and so on.</li>
+        <li>When you're unsure about a card, it's meaning, or how it comes to life, <i>lean in to this curiosity</i>. Chat more about the possibilities of interpretation, and go back over it a few times if you need to.</li>
         <li>What pictures, songs, poems, or other media bring this future to life? Include these in your story, too.</li>
     </ul>
 
