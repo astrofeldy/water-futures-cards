@@ -8,7 +8,7 @@ st.set_page_config(page_title="Water Futures Cards Activity", layout="centered")
 
 # Title & instructions
 st.title("🎴 Imagining a water justice future")
-st.markdown("""
+st.markdown("
 ### 📝 Instructions
 **Before you start:** decide who is going to be the 'dealer' - one person in the breakout room needs to share their screen, and drive the below activity.
 1. Click the **"Draw card"** button above a card to flip it over, and discuss together what the card means to you as a standalone image/word/idea. 
@@ -20,7 +20,7 @@ st.markdown("""
 PS: Double click **"Draw Again"** to shuffle and try a new set, if you want to.
     
 ---
-"""
+"
            unsafe_allow_html=True)
     
 
