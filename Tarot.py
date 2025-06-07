@@ -37,7 +37,7 @@ st.markdown(
 
 
 # Load images
-back_image = Image.open("back.jpg")
+back_image = Image.open("backnew.png")
 card_folder = "cardsreal"
 card_files = [f for f in os.listdir(card_folder) if f.endswith(('.png', '.jpg', '.jpeg'))]
 
