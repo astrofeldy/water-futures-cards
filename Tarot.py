@@ -61,7 +61,7 @@ for i in range(3):
         # Center-align the button using nested columns
         col_left, col_center, col_right = st.columns([1, 2, 1])
         with col_center:
-            if st.button(f"Draw card: {positions[i]}", key=f"flip_button_{i}"):
+            if st.button(f"Draw card {positions[i]}", key=f"flip_button_{i}"):
                 st.session_state.flipped_cards[i] = True
 
         # Show either the card or the back
