@@ -58,18 +58,21 @@ cols = st.columns(3)
 # Display cards + reveal buttons
 for i in range(3):
     with cols[i]:
-        if st.button(f"Draw card: {positions[i]}", key=f"flip_button_{i}"):
-            st.session_state.flipped_cards[i] = True
+        # Center-align the button using nested columns
+        col_left, col_center, col_right = st.columns([1, 2, 1])
+        with col_center:
+            if st.button(f"Draw card: {positions[i]}", key=f"flip_button_{i}"):
+                st.session_state.flipped_cards[i] = True
 
+        # Show either the card or the back
         if st.session_state.flipped_cards[i]:
-                card_path = os.path.join(card_folder, st.session_state.drawn_cards[i])
-                card_image = Image.open(card_path)
-                st.image(card_image, use_container_width=True)
+            card_path = os.path.join(card_folder, st.session_state.drawn_cards[i])
+            card_image = Image.open(card_path)
+            st.image(card_image, use_container_width=True)
         else:
-                st.image(back_image, use_container_width=True)
-            
+            st.image(back_image, use_container_width=True)
 
-        # Show the label under each card (always)
+        # Show the label under each card (always centered)
         st.markdown(
             f"<div style='text-align: center; font-size: 18px; font-weight: bold; margin-top: 6px;'>{positions[i]}</div>",
             unsafe_allow_html=True
