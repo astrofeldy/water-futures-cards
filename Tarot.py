@@ -10,7 +10,7 @@ st.set_page_config(page_title="Water Futures Cards Activity", layout="centered")
 st.title("🎴 Imagining your water future")
 st.markdown("""
 ### 📝 Instructions
-
+**Before you start:** decide who is going to be the 'dealer' - one person in the breakout room needs to share their screen, and drive the below activity.
 1. Click the **"Reveal"** buttons above each card to flip it over.
 2. Reveal just one at a time, and discuss together what each card means to you as a standalone image/word/idea. 
 3. As a group, discuss how this meaning could represent a water justice past, present, or future (depending on the card position).
@@ -45,8 +45,13 @@ cols = st.columns(3)
 # Display cards + reveal buttons
 for i in range(3):
     with cols[i]:
-        if st.button(f"Draw card: {positions[i]}", key=f"flip_button_{i}"):
-                st.session_state.flipped_cards[i] = True
+        st.markdown(
+            f"<div style='text-align: center;'>{st.button(f'Draw card: {positions[i]}', key=f'flip_button_{i}')}</div>",
+            unsafe_allow_html=True
+        )
+    if st.session_state.get(f'flip_button_{i}'):
+        st.session_state.flipped_cards[i] = True
+
         if st.session_state.flipped_cards[i]:
                 card_path = os.path.join(card_folder, st.session_state.drawn_cards[i])
                 card_image = Image.open(card_path)
