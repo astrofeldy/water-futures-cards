@@ -76,7 +76,7 @@ for i in range(3):
         )
 
 # Add a text box
-user_message = st.text_area("What's the story?", height=200)
+user_message = st.text_area("Use this text box to take notes, if you want to:", height=150)
 
 # Draw again button at the bottom
 st.markdown("---")
