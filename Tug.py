@@ -126,3 +126,20 @@ if st.button("🔁 Reset the Deck"):
     st.session_state.used_cards = []
     st.session_state.utopia_card = None
     st.session_state.dystopia_card = None
+
+
+#-------------------- COPYRIGHT STATEMENT ------------
+st.markdown("""
+---
+<hr style="margin-top: 2em; margin-bottom: 1em;">
+
+<div style='text-align: center; color: grey; font-size: 14px; line-height: 1.6;'>
+
+<strong>© 2025 Australian National University. All rights reserved.</strong><br>
+This app is intended for <em>educational use only</em> and may <strong>not</strong> be reproduced, modified, or distributed without prior written permission.<br><br>
+
+All images are owned by the <strong>Australian National University</strong> and were created by <strong>Benjamin Coultas-Roberts</strong>.<br>
+All other intellectual property, including the design of the exercise and how this app is used, is owned by the <strong>Institute for Water Futures</strong> at the Australian National University.
+
+</div>
+""", unsafe_allow_html=True)
