@@ -10,7 +10,7 @@ st.set_page_config(page_title="Water Futures Cards Activity", layout="centered")
 st.title("🎴 Imagining a water justice future")
 st.markdown(
     """
-    **Before you start:** decide who is going to be the dealer - one person in the breakout room needs to share their screen, and drive the below activity.  
+    **Before you start:** decide who is going to be the 'dealer' - one person in the breakout room needs to share their screen, and drive the below activity.  
 
     ### 📝 Instructions  
 
