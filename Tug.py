@@ -130,10 +130,10 @@ if st.button("🔁 Reset the Deck"):
 
 #-------------------- COPYRIGHT STATEMENT ------------
 st.markdown("""
----
+
 <hr style="margin-top: 2em; margin-bottom: 1em;">
 
-<div style='text-align: center; color: grey; font-size: 14px; line-height: 1.6;'>
+<div style='text-align: center; color: grey; font-size: 8px; line-height: 1;'>
 
 <strong>© 2025 Australian National University. All rights reserved.</strong><br>
 This app is intended for <em>educational use only</em> and may <strong>not</strong> be reproduced, modified, or distributed without prior written permission.<br><br>
