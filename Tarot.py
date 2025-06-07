@@ -45,12 +45,8 @@ cols = st.columns(3)
 # Display cards + reveal buttons
 for i in range(3):
     with cols[i]:
-        st.markdown(
-            f"<div style='text-align: center;'>{st.button(f'Draw card: {positions[i]}', key=f'flip_button_{i}')}</div>",
-            unsafe_allow_html=True
-        )
-    if st.session_state.get(f'flip_button_{i}'):
-        st.session_state.flipped_cards[i] = True
+        if st.button(f"Draw card: {positions[i]}", key=f"flip_button_{i}"):
+            st.session_state.flipped_cards[i] = True
 
         if st.session_state.flipped_cards[i]:
                 card_path = os.path.join(card_folder, st.session_state.drawn_cards[i])
