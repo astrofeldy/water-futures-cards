@@ -8,15 +8,19 @@ st.set_page_config(page_title="Tug of Futures", layout="centered")
 st.title("🌏 Tug of Futures: Utopia vs. Dystopia")
 
 st.markdown("""
+## A tug-o-war story, between hope and despair!
 ### 📝 Instructions
 
 This warm-up invites you to explore imagined futures:
 
-1. Click **"Reveal Utopia"** to flip one hopeful card.
-2. Click **"Reveal Dystopia"** to flip one challenging or cautionary card.
-3. Reflect: What tensions emerge between them? How might both influence the future of water?
-4. Double click **"Reset the Deck"** to start over with fresh cards.
+1. Click **"Reveal Utopia"** to flip one utopian card. Player 1 shares a few sentences of a hopeful story, then passes to the next player.
+2. Click **"Reveal Dystopia"** to flip one dystopian card. Player 2 continues the story, using this new card, but takes it in a darker or bleak direction.
+3. Continue flipping cards and telling your hopeful-to-bleak back and forth story, until the team becomes repetitive or stuck. Then start again and have another go by double clicking **"Reseat the deck"**.
 
+### Reflection: 
+- What was easy or difficult about this exercise?
+- What side was easiest to tell a story with - hopeful or disastrous? 
+- How might both sides influence the future of water justice?
 ---
 """)
 
