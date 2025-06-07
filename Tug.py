@@ -21,14 +21,14 @@ This warm-up invites you to explore imagined futures:
 """)
 
 # -------------------- LOAD CARD FILES --------------------
-card_folder = "cards"
+card_folder = "cardsreal"
 card_files = [f for f in os.listdir(card_folder) if f.lower().endswith((".jpg", ".jpeg", ".png"))]
 
 if len(card_files) < 4:
     st.error("Not enough cards in the deck (need at least 4).")
     st.stop()
 
-back_image = Image.open("back.jpg")
+back_image = Image.open("backnew.png")
 
 # -------------------- SETUP SESSION STATE --------------------
 if "unused_cards" not in st.session_state:
