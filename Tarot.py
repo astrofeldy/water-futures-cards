@@ -10,8 +10,9 @@ st.set_page_config(page_title="Water Futures Cards Activity", layout="centered")
 st.title("🎴 Imagining a water justice future")
 st.markdown(
     """
-    ### 📝 Instructions  
     **Before you start:** decide who is going to be the dealer - one person in the breakout room needs to share their screen, and drive the below activity.  
+
+    ### 📝 Instructions  
 
     1. Click the **"Draw card"** button above a card to flip it over, and discuss together what the card means to you as a standalone image/word/idea.  
     2. As a group, discuss how this meaning could represent a water justice past, present, or future (depending on the card position).  
