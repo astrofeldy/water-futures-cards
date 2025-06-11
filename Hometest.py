@@ -8,7 +8,7 @@ st.set_page_config(page_title="Welcome to the Water Futures Card Deck", layout="
 st.title("Welcome to the Water Futures Card Deck online portal!")
 
 st.markdown("""
-## Navigate the side bar to swap between playable activities using the 'Water Futures Cards' developed by the team at The Institute for Water Futures at The Australian National University
+## Navigate between playable activities using the sidebar
 ---
 """)
 
@@ -28,7 +28,7 @@ cols = st.columns(2)
 # ----- COL 0: Display card back -----
 with cols[0]:
     st.image(back_image, use_container_width=True)
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Remaining deck</div>", unsafe_allow_html=True)
+    st.markdown("<div style='text-align: center; font-weight: bold;'>Example card back</div>", unsafe_allow_html=True)
 
 
 # ----- COL 2: Display one face card -----
@@ -41,7 +41,7 @@ with cols[1]:
         card_path = os.path.join(card_folder, random_card)
     
         # Display the image
-        st.image(Image.open(card_path), caption="Randomly drawn card", use_container_width=True)
+        st.image(Image.open(card_path), caption="Example card", use_container_width=True)
     
 
 #-------------------- COPYRIGHT STATEMENT ------------
