@@ -4,23 +4,22 @@ import random
 import os
 
 # -------------------- PAGE SETUP --------------------
-st.set_page_config(page_title="Tug of Futures warmup", layout="centered")
+st.set_page_config(page_title="Exquisite Warm Up", layout="centered")
 st.title("🌏 Tug of Futures: Utopia vs. Dystopia")
 
 st.markdown("""
-## A tug-o-war story, between hope and despair!
+## Build the story, one flip at a time!
 ### 📝 Instructions
 
-This warm-up invites you to explore imagined futures:
+This warm-up invites you to build a story together, using a revealed card as a prompt:
 
-1. Click **"Reveal Utopia"** to flip one utopian card. Player 1 shares a few sentences of a hopeful story, then passes to the next player.
-2. Click **"Reveal Dystopia"** to flip one dystopian card. Player 2 continues the story, using this new card, but takes it in a darker or bleak direction.
-3. Continue flipping cards and telling your hopeful-to-bleak back and forth story, until the team becomes repetitive or stuck. Then start again and have another go by **double clicking** "Reset the deck".
+1. Click **"Reveal card"** to flip one water future card. Player 1 begins a new story by using the card to set the scene, then passes to the next player.
+2. Click **"Reveal card"** again to show another card, and Player 2 continues building on the story made by Player 1.
+3. Continue flipping cards and telling your back-and-forth story, until the team becomes repetitive or stuck. Then start again and have another go by **double clicking** "Reset the deck".
 
 ### Reflection: 
 - What was easy or difficult about this exercise?
-- What side was easiest to tell a story with - hopeful or disastrous? 
-- How might both sides influence the future of water justice?
+- Were there common themes that emerged? 
 ---
 """)
 
