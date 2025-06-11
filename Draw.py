@@ -5,16 +5,19 @@ import os
 
 # -------------------- PAGE SETUP --------------------
 st.set_page_config(page_title="Exquisite Warm Up", layout="centered")
-st.title("🌏 Tug of Futures: Utopia vs. Dystopia")
+st.title("🌏 Exquisite Corpse: Water Futures Edition")
 
 st.markdown("""
 ## Build the story, one flip at a time!
+
+Before you start: one person in the breakout room should share their screen, so that you're all looking at the same revealed cards.
+
 ### 📝 Instructions
 
 This warm-up invites you to build a story together, using a revealed card as a prompt:
 
-1. Click **"Reveal card"** to flip one water future card. Player 1 begins a new story by using the card to set the scene, then passes to the next player.
-2. Click **"Reveal card"** again to show another card, and Player 2 continues building on the story made by Player 1.
+1. Click **"flip a card"** to reveal one water future card. Player 1 begins a new story by using the card to set the scene, then passes to the next player.
+2. Click **"flip a card"** again to show another card, and Player 2 continues building on the story made by Player 1.
 3. Continue flipping cards and telling your back-and-forth story, until the team becomes repetitive or stuck. Then start again and have another go by **double clicking** "Reset the deck".
 
 ### Reflection: 
@@ -71,7 +74,7 @@ cols = st.columns(2)
 with cols[0]:
     st.image(back_image, use_container_width=True)
     st.markdown("<div style='text-align: center; font-weight: bold;'>Remaining deck</div>", unsafe_allow_html=True)
-    if st.button("🌿 CLICK to flip a card", key="reveal_utopia"):
+    if st.button("🌿 CLICK: flip a card", key="reveal_utopia"):
         draw_card("utopia")
 
 # ----- COL 1: UTOPIA CARD DISPLAY -----
