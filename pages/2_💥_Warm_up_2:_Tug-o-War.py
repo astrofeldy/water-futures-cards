@@ -5,7 +5,7 @@ import os
 
 # -------------------- PAGE SETUP --------------------
 st.set_page_config(page_title="Tug of Futures warmup", layout="centered")
-st.title("🌏 Tug of Futures: Utopia vs. Dystopia")
+st.title("💥 Tug of Futures: Utopia vs. Dystopia")
 
 st.markdown("""
 ## A tug-o-war story, between hope and despair!
