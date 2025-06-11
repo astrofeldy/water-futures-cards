@@ -5,7 +5,7 @@ import os
 
 # -------------------- PAGE SETUP --------------------
 st.set_page_config(page_title="Exquisite Warm Up", layout="centered")
-st.title("🌏 Exquisite Corpse: Water Futures Edition")
+st.title("☕ Warm Up: Exquisite Corpse, Water Futures Edition")
 
 st.markdown("""
 ## Build the story, one flip at a time!
