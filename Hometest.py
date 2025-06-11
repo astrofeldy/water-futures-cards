@@ -27,8 +27,7 @@ cols = st.columns(2)
 
 # ----- COL 0: Display card back -----
 with cols[0]:
-    st.image(back_image, use_container_width=True)
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Example card back</div>", unsafe_allow_html=True)
+    st.image(back_image, caption="Example card back", use_container_width=True)
 
 
 # ----- COL 1: Display one face card -----
@@ -41,7 +40,7 @@ with cols[1]:
         card_path = os.path.join(card_folder, random_card)
     
         # Display the image
-        st.image(Image.open(card_path), use_container_width=True)
+        st.image(Image.open(card_path), caption="Example card face", use_container_width=True)
     
 
 #-------------------- COPYRIGHT STATEMENT ------------
