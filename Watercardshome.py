@@ -33,16 +33,16 @@ with cols[0]:
 
 # ----- COL 2: Display one face card -----
 with cols[1]:
-if not card_files:
-    st.error("No card images found in the folder!")
-else:
-    # Choose a random image on page load
-    random_card = random.choice(card_files)
-    card_path = os.path.join(card_folder, random_card)
-
-    # Display the image
-    st.image(Image.open(card_path), caption="Randomly drawn card", use_container_width=True)
-
+    if not card_files:
+        st.error("No card images found in the folder!")
+    else:
+        # Choose a random image on page load
+        random_card = random.choice(card_files)
+        card_path = os.path.join(card_folder, random_card)
+    
+        # Display the image
+        st.image(Image.open(card_path), caption="Randomly drawn card", use_container_width=True)
+    
 
 #-------------------- COPYRIGHT STATEMENT ------------
 st.markdown("""
