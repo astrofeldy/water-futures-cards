@@ -31,7 +31,7 @@ with cols[0]:
     st.markdown("<div style='text-align: center; font-weight: bold;'>Example card back</div>", unsafe_allow_html=True)
 
 
-# ----- COL 2: Display one face card -----
+# ----- COL 1: Display one face card -----
 with cols[1]:
     if not card_files:
         st.error("No card images found in the folder!")
@@ -41,7 +41,7 @@ with cols[1]:
         card_path = os.path.join(card_folder, random_card)
     
         # Display the image
-        st.image(Image.open(card_path), caption="Example card", use_container_width=True)
+        st.image(Image.open(card_path), use_container_width=True)
     
 
 #-------------------- COPYRIGHT STATEMENT ------------
