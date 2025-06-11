@@ -65,13 +65,13 @@ def draw_card(for_side):
     #insert: if utopia = dystopia state, draw again
 
 # -------------------- UI LAYOUT --------------------
-cols = st.columns(4)
+cols = st.columns(2)
 
 # ----- COL 0: UTOPIA DRAW BUTTON -----
 with cols[0]:
     st.image(back_image, use_container_width=True)
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Next)</div>", unsafe_allow_html=True)
-    if st.button("🌿 Reveal UTOPIAN card", key="reveal_utopia"):
+    st.markdown("<div style='text-align: center; font-weight: bold;'>Remaining deck</div>", unsafe_allow_html=True)
+    if st.button("🌿 Reveal next card", key="reveal_utopia"):
         draw_card("utopia")
 
 # ----- COL 1: UTOPIA CARD DISPLAY -----
@@ -81,7 +81,7 @@ with cols[1]:
         st.image(Image.open(card_path), use_container_width=True)
     else:
         st.empty()
-    st.markdown("<div style='text-align: center; font-weight: bold;'>Utopia (Revealed)</div>", unsafe_allow_html=True)
+    st.markdown("<div style='text-align: center; font-weight: bold;'>Revealed card (most recent)</div>", unsafe_allow_html=True)
 
 # -------------------- RESET BUTTON --------------------
 if st.button("🔁 Reset the Deck"):
