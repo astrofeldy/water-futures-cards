@@ -17,7 +17,7 @@ st.markdown(
     1. Click the **"Draw card"** button above a card to flip it over, and discuss together what the card means to you as a standalone image/word/idea.  
     2. As a group, discuss how this meaning could represent a water justice past, present, or future (depending on the card position).  
     3. **Imagine the year 2075.** What story could you tell about the timeline you've revealed here? How do the past and present cards interact with the future, 50 years from now?  What does this future look like?
-    4. Capture your story in our class <a href="https://www.google.com" target="_blank">Miro board</a>. Feel free to copy/paste any kind of other visual material that helps to tell your story.  
+    4. Capture your story in our class <a href="https://docs.google.com/presentation/d/1RzSkivJvGuMd_TTnFqIq3MPWWW_SR43ZdNxIboRI8-g/edit?usp=sharing" target="_blank">slides</a>. Feel free to copy/paste any kind of other visual material that helps to tell your story.  
     5. Share back with the group the story/scenario you come up with.  
 
     #### **Tips!**
@@ -52,7 +52,7 @@ if 'drawn_cards' not in st.session_state:
     st.session_state.flipped_cards = [False, False, False]
 
 # Card titles
-positions = ["PAST", "PRESENT", "FUTURE"]
+positions = ["Prompt 1", "Prompt 2", "Prompt 3"]
 cols = st.columns(3)
 
 # Display cards + reveal buttons
@@ -61,7 +61,7 @@ for i in range(3):
         # Center-align the button using nested columns
         col_left, col_center, col_right = st.columns([1, 2, 1])
         with col_center:
-            if st.button(f"Draw card {positions[i]}", key=f"flip_button_{i}"):
+            if st.button(f"Draw: {positions[i]}", key=f"flip_button_{i}"):
                 st.session_state.flipped_cards[i] = True
 
         # Show either the card or the back
