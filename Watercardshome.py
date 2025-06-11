@@ -5,7 +5,7 @@ import os
 
 # -------------------- PAGE SETUP --------------------
 st.set_page_config(page_title="Welcome to the Water Futures Card Deck", layout="centered")
-st.title("Here is where you'll find playable activities to use the "Water Futures Cards" developed by the team at The Institute for Water Futures at The Australian National University")
+st.title("Here is where you'll find playable activities to use the 'Water Futures Cards' developed by the team at The Institute for Water Futures at The Australian National University")
 
 st.markdown("""
 ## Build the story, one flip at a time!
