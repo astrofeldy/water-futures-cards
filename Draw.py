@@ -71,7 +71,7 @@ cols = st.columns(2)
 with cols[0]:
     st.image(back_image, use_container_width=True)
     st.markdown("<div style='text-align: center; font-weight: bold;'>Remaining deck</div>", unsafe_allow_html=True)
-    if st.button("🌿 Reveal next card", key="reveal_utopia"):
+    if st.button("🌿 click here to flip a fresh card", key="reveal_utopia"):
         draw_card("utopia")
 
 # ----- COL 1: UTOPIA CARD DISPLAY -----
